@@ -57,3 +57,7 @@ A responsive, high-performance TikTok-style vertical video player built with Rea
 
 ## Video Demonstration
 [Watch the live Prototype Video on Google Drive](https://drive.google.com/file/d/14d9PYJt71vGdP7iNm6eB5sfV-bqELKgM/view?usp=sharing) 
+
+## Screenshots
+![Full View](./Fullview.png)
+![Comment Section](./Comment_section.png)
