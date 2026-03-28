@@ -1,0 +1,72 @@
+:root {
+  /* Dynamic Theming - Default is Dark Mode as per premium app feel */
+  --bg-primary: #000000;
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --overlay-bg: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+  --accent-color: #ff0050; /* TikTok red accent */
+  --accent-hover: #e00045;
+  --icon-bg: rgba(0, 0, 0, 0.4);
+  
+  /* Layout variables */
+  --safe-bottom: env(safe-area-inset-bottom, 20px);
+  --header-height: 60px;
+}
+
+[data-theme="light"] {
+  --bg-primary: #f8f8f8;
+  --text-primary: #121212;
+  --text-secondary: rgba(0, 0, 0, 0.6);
+  --overlay-bg: linear-gradient(to top, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 100%);
+  --icon-bg: rgba(255, 255, 255, 0.6);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Prevent body scroll, everything happens inside the feed container */
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  height: 100vh;
+  /* Use active viewport height for mobile browsers */
+  height: 100dvh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #111; /* Outer background to frame the app on desktop */
+}
+
+/* Animations */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes heartPop {
+  0% { transform: scale(0) rotate(-15deg); opacity: 0; }
+  50% { transform: scale(1.2) rotate(10deg); opacity: 1; filter: drop-shadow(0 0 20px rgba(255, 0, 80, 0.8)); }
+  100% { transform: scale(1) rotate(0deg); opacity: 0; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes fadeOutZoom {
+  0% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(1.5); }
+}

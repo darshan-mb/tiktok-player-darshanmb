@@ -1,0 +1,49 @@
+.playerContainer {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background-color: black;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.videoElement {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: transparent; /* No flicker on load if skeleton handled */
+}
+
+/* Play/Pause Middle Icon indicator */
+.playPauseIndicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none; /* Let taps pass to video */
+  color: white;
+  z-index: 20;
+  animation: fadeOutZoom 0.8s ease-out forwards;
+}
+
+/* Big heart on double tap */
+.bigHeart {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: var(--accent-color);
+  pointer-events: none;
+  z-index: 25;
+  animation: heartPop 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
+}
